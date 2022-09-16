@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/SchoolPay/app" isTestSource="false" packagePrefix="App\" />
+      <sourceFolder url="file://$MODULE_DIR$/SchoolPay/database/factories" isTestSource="false" packagePrefix="Database\Factories\" />
+      <sourceFolder url="file://$MODULE_DIR$/SchoolPay/database/seeders" isTestSource="false" packagePrefix="Database\Seeders\" />
+      <sourceFolder url="file://$MODULE_DIR$/SchoolPay/tests" isTestSource="true" packagePrefix="Tests\" />
+      <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/psr/simple-cache" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/psr/event-dispatcher" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/psr/log" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/psr/http-factory" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/psr/http-message" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/psr/container" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/psr/http-client" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/hamcrest/hamcrest-php" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/vlucas/phpdotenv" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/phpunit/php-text-template" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/phpunit/phpunit" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/phpunit/php-timer" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/phpunit/php-code-coverage" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/phpunit/php-file-iterator" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/phpunit/php-invoker" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/monolog/monolog" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/sebastian/resource-operations" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/sebastian/code-unit-reverse-lookup" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/sebastian/exporter" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/sebastian/code-unit" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/sebastian/comparator" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/sebastian/environment" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/sebastian/type" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/sebastian/version" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/sebastian/diff" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/sebastian/lines-of-code" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/sebastian/object-reflector" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/sebastian/cli-parser" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/sebastian/recursion-context" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/sebastian/object-enumerator" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/sebastian/global-state" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/guzzlehttp/promises" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/sebastian/complexity" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/guzzlehttp/guzzle" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/guzzlehttp/psr7" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/ralouphie/getallheaders" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/webmozart/assert" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/phpoption/phpoption" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/fruitcake/laravel-cors" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/facade/ignition-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/facade/flare-client-php" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/facade/ignition" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/fakerphp/faker" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/nikic/php-parser" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/league/config" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/league/mime-type-detection" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/league/flysystem" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/league/commonmark" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/laravel/sail" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/phar-io/manifest" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/laravel/sanctum" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/laravel/breeze" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/voku/portable-ascii" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/laravel/framework" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/phar-io/version" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/dragonmantank/cron-expression" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/laravel/tinker" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/symfony/string" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/doctrine/instantiator" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/doctrine/inflector" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/symfony/http-foundation" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/symfony/mime" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/doctrine/lexer" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/symfony/console" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/symfony/translation" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/laravel/serializable-closure" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/symfony/http-kernel" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/nette/utils" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/nesbot/carbon" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/nette/schema" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/opis/closure" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/theseer/tokenizer" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/swiftmailer/swiftmailer" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/brick/math" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/myclabs/deep-copy" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/asm89/stack-cors" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/psy/psysh" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/ramsey/uuid" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/ramsey/collection" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/symfony/translation-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/symfony/finder" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/symfony/polyfill-php72" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/graham-campbell/result-type" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/symfony/polyfill-php73" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/symfony/process" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/symfony/polyfill-intl-normalizer" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/symfony/event-dispatcher-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/symfony/polyfill-intl-grapheme" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/symfony/event-dispatcher" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/symfony/polyfill-ctype" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/symfony/css-selector" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/symfony/error-handler" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/symfony/polyfill-php81" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/filp/whoops" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/mockery/mockery" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/symfony/routing" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/egulias/email-validator" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/symfony/polyfill-intl-idn" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/symfony/polyfill-php80" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/symfony/polyfill-iconv" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/symfony/var-dumper" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/tijsverkoyen/css-to-inline-styles" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/symfony/deprecation-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/illuminate/container" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/nunomaduro/collision" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/symfony/service-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/illuminate/collections" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/illuminate/filesystem" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/illuminate/contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/illuminate/support" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/illuminate/macroable" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/illuminate/validation" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/illuminate/translation" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/dflydev/dot-access-data" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
