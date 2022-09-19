@@ -15,6 +15,11 @@ class CreatePaymentsTable extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('student_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('academic_year_id');
+            $table->enum('type', ['discharge', 'medicalVisit']); //Supported type
+            $table->integer('amount');
+            $table->timestamp('payAt');
             $table->timestamps();
         });
     }

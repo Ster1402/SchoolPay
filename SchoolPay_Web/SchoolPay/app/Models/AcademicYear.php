@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class AcademicYear extends Model
 {
     use HasFactory;
+
+    //Relationships
+    public function payments(){
+        return $this->hasMany(Payment::class);
+    }
+
+    public function paymentConfigs(){
+        return $this->hasMany(PaymentConfig::class);
+    }
 }

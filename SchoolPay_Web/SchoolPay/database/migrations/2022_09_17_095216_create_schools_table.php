@@ -15,6 +15,10 @@ class CreateSchoolsTable extends Migration
     {
         Schema::create('schools', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('account_id')->nullable();
+            $table->enum('country', ['cameroon']); //Supported country
+            $table->string('town');
             $table->timestamps();
         });
     }

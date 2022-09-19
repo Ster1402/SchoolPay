@@ -1,0 +1,55 @@
+Arguments: 
+  D:\laragon\bin\nodejs\node-v14\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js
+
+PATH: 
+  C:\Users\ndets\bin;C:\Users\ndets\Documents\Cmder\bin;C:\Users\ndets\Documents\Cmder\vendor\bin;C:\Program Files\Git\bin;C:\Users\ndets\Documents\Cmder\vendor\git-for-windows\mingw64\bin;C:\Users\ndets\Documents\Cmder\vendor\git-for-windows\usr\local\bin;C:\Users\ndets\Documents\Cmder\vendor\git-for-windows\usr\bin;C:\Users\ndets\Documents\Cmder\vendor\git-for-windows\usr\bin;C:\Users\ndets\Documents\Cmder\vendor\git-for-windows\mingw64\bin;C:\Users\ndets\Documents\Cmder\vendor\git-for-windows\usr\bin;C:\Users\ndets\bin;C:\Users\ndets\Documents\Cmder\vendor\conemu-maximus5\ConEmu\Scripts;C:\Users\ndets\Documents\Cmder\vendor\conemu-maximus5;C:\Users\ndets\Documents\Cmder\vendor\conemu-maximus5\ConEmu;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Users\ndets\AppData\Local\Programs\Python\Python39\Scripts;C:\Users\ndets\AppData\Local\Programs\Python\Python39;C:\Python39\Scripts;C:\Python39;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\Yarn\bin;C:\Program Files\Git\cmd;C:\Program Files\CMake\bin;D:\LLVM\bin;C:\ProgramData\ComposerSetup\bin;D:\nodejs;D:\Logiciels\apache-tomcat-9.0.54\bin;C:\Users\ndets\Documents\Cmder;C:\Program Files\dotnet;C:\Program Files (x86)\dotnet;C:\Users\ndets\AppData\Local\Programs\Python\Python37\Scripts;C:\Users\ndets\AppData\Local\Programs\Python\Python37;C:\Users\ndets\AppData\Local\Programs\Python\Python38\Scripts;C:\Users\ndets\AppData\Local\Programs\Python\Python38;C:\Users\ndets\AppData\Local\Yarn\config\global\node_modules\.bin;C:\Users\ndets\AppData\Roaming\Composer\vendor\bin;C:\Users\ndets\AppData\Roaming\npm;D:\laragon\bin;D:\laragon\bin\apache\httpd-2.4.47-win64-VS16\bin;D:\laragon\bin\composer;D:\laragon\bin\git\bin;D:\laragon\bin\git\cmd;D:\laragon\bin\git\mingw64\bin;D:\laragon\bin\git\usr\bin;D:\laragon\bin\laragon\utils;D:\laragon\bin\mysql\mysql-5.7.33-winx64\bin;D:\laragon\bin\nginx\nginx-1.19.10;D:\laragon\bin\ngrok;D:\laragon\bin\nodejs\node-v14;D:\nodejs;D:\laragon\bin\notepad++;D:\laragon\bin\php\php-7.4.19-Win32-vc15-x64;D:\laragon\bin\redis\redis-x64-3.2.100;D:\laragon\bin\telnet;D:\laragon\usr\bin;D:\VisualCode\Microsoft VS Code;C:\Program Files\Java\jdk-17.0.1\bin;C:\Program Files\Java\jre1.8.0_281\bin;C:\Program Files\MySQL\Connector ODBC 8.0;C:\Users\ndets\AppData\Local\Microsoft\WindowsApps;D:\VisualCode\Microsoft VS Code\bin;C:\Users\ndets\AppData\Local\GitHubDesktop\bin;C:\Users\ndets\AppData\Local\Yarn\bin;D:\IntelliJ\IntelliJ IDEA Community Edition 2020.2\bin;D:\Qt\Tools\QtCreator\bin;D:\Qt\5.15.0\msvc2019\bin;D:\Microsoft Visual Studio\2019\Community;D:\Logiciels\Sqliteman-1.2.2;C:\Program Files (x86)\Git Credential Manager Core;C:\Users\ndets\AppData\Local\Google\Cloud SDK\google-cloud-sdk\bin;D:\Logiciels\Gradle_Android\gradle-6.8.1\bin;D:\Qt\Tools\CMake_64\bin;D:\Qt\Tools\Ninja;D:\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build;D:\Qt\Tools\QtCreator\bin\clang;D:\LLVM\bin;D:\JetBrains\IntelliJ IDEA Community Edition 2020.3.3\bin;C:\Program Files (x86)\GitHub CLI;D:\JetBrains\PyCharm Community Edition 2021.2\bin;C:\MinGW\bin;D:\JetBrains\PhpStorm 2021.1.1\bin;D:\JetBrains\CLion 2021.3.3\bin;D:\Logiciels\dotnet-sdk-6.0.200-win-x64;C:\Users\ndets\.dotnet\tools;C:\Users\ndets\AppData\Roaming\Python\Python39\Scripts;C:\Users\ndets\Documents\Cmder;C:\Users\ndets\Documents\Cmder\vendor\git-for-windows\usr\bin\vendor_perl;C:\Users\ndets\Documents\Cmder\vendor\git-for-windows\usr\bin\core_perl
+
+Yarn version: 
+  1.22.4
+
+Node version: 
+  14.16.1
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/react-native: ESOCKETTIMEDOUT
+      at ClientRequest.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141375:19)
+      at Object.onceWrapper (events.js:421:28)
+      at ClientRequest.emit (events.js:315:20)
+      at TLSSocket.emitRequestTimeout (_http_client.js:784:9)
+      at Object.onceWrapper (events.js:421:28)
+      at TLSSocket.emit (events.js:327:22)
+      at TLSSocket.Socket._onTimeout (net.js:483:8)
+      at listOnTimeout (internal/timers.js:554:17)
+      at processTimers (internal/timers.js:497:7)
+
+npm manifest: 
+  {
+    "name": "schoolpay",
+    "version": "1.0.0",
+    "main": "node_modules/expo/AppEntry.js",
+    "scripts": {
+      "start": "expo start",
+      "android": "expo start --android",
+      "ios": "expo start --ios",
+      "web": "expo start --web"
+    },
+    "dependencies": {
+      "expo": "~46.0.9",
+      "expo-status-bar": "~1.4.0",
+      "react": "18.0.0",
+      "react-native": "0.69.5"
+    },
+    "devDependencies": {
+      "@babel/core": "^7.12.9"
+    },
+    "private": true
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

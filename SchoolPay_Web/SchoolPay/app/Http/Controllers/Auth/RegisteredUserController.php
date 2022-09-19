@@ -9,6 +9,7 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rule;
 use Illuminate\Validation\Rules;
 
 class RegisteredUserController extends Controller
@@ -34,6 +35,9 @@ class RegisteredUserController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'username' => ['required', 'string', 'max:255', Rule::unique('users', 'username')],
+            'category' => ['required', 'string', Rule::exists('categories')
+                ->whereIn('name', ['school', 'student'])],
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
@@ -49,6 +53,11 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect(RouteServiceProvider::HOME);
+        $category = $request['category'];
+
+        return redirect(
+            $category === "school" ? RouteServiceProvider::HOME_SCHOOL
+                : RouteServiceProvider::HOME_STUDENT
+        );
     }
 }

@@ -15,6 +15,7 @@ class CreateAcademicYearsTable extends Migration
     {
         Schema::create('academic_years', function (Blueprint $table) {
             $table->id();
+            $table->string('period'); //Formatted like 2022 - 2023
             $table->timestamps();
         });
     }

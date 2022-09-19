@@ -2,7 +2,11 @@
 
 namespace App\View\Components;
 
+use App\Models\School;
+use App\Models\Student;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\View\Component;
+use function PHPUnit\Framework\isNull;
 
 class StudentTable extends Component
 {
@@ -23,6 +27,18 @@ class StudentTable extends Component
      */
     public function render()
     {
-        return view('components.student-table');
+        $school = School::firstWhere('user_id', Auth::user()->id);
+
+        if ($school === null){
+            abort(404);
+        }
+
+        $students = Student::whereHas('discipline', static function ($query) use($school) {
+           $query->where('school_id', $school->id);
+        })->with('discipline');
+
+        return view('components.student-table', [
+            'students' => $students->paginate(20),
+        ]);
     }
 }
