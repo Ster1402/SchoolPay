@@ -127,6 +127,8 @@
       <excludeFolder url="file://$MODULE_DIR$/SchoolPay/storage/app" />
       <excludeFolder url="file://$MODULE_DIR$/SchoolPay/storage/framework" />
       <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/_laravel_idea" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/vendor/itsgoingd/clockwork" />
+      <excludeFolder url="file://$MODULE_DIR$/SchoolPay/storage/clockwork" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
