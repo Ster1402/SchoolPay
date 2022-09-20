@@ -2,6 +2,7 @@
 
 use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SchoolStudentController;
 
 Route::get('/', static function () {
     return view('index');
@@ -10,33 +11,34 @@ Route::get('/', static function () {
 Route::middleware('auth')->group(static function () {
 
     //School view
-    Route::prefix('school')->group(static function () {
+    Route::prefix('school')->name('school.')->group(static function () {
         //Home
         Route::get('/dashboard', static function () {
             return view('Schools.home');
-        })->name('school.dashboard');
+        })->name('dashboard');
 
         //Student management
-        Route::prefix('student')->group(static function () {
-            //View the list of students and filter
-            Route::get('/view', static function () {
+        Route::resource('student', SchoolStudentController::class);
 
-            })->name('school.student.index');
+        Route::get('/students/download-list', static function (){
 
+        })->name('student.download-list');
 
-        });
+        Route::get('/students/import-list', static function (){
+
+        })->name('student.import-list');
 
         //University right management
-        Route::prefix('university-right')->group(static function () {
+        Route::prefix('university-right')->name('university-right.')->group(static function () {
             //Configuration of date
             Route::get('/date-configuration', static function () {
 
-            })->name('school.university-right.config');
+            })->name('config');
 
             //Histories of date configuration
             Route::get('/date-configuration/history', static function () {
 
-            })->name('school.university-right.history');
+            })->name('history');
         });
 
     });

@@ -562,7 +562,7 @@ var __webpack_exports__ = {};
       activeClasses: 'bg-white dark:bg-gray-800',
       inactiveClasses: 'bg-white/50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800'
     },
-    interval: 3000,
+    interval: 15000,
     onNext: function onNext() {},
     onPrev: function onPrev() {},
     onChange: function onChange() {}
@@ -617,7 +617,7 @@ var __webpack_exports__ = {};
       }
       /**
        * Slide to the element based on id
-       * @param {*} position 
+       * @param {*} position
        */
 
     }, {
@@ -685,7 +685,7 @@ var __webpack_exports__ = {};
       }
       /**
        * This method applies the transform classes based on the left, middle, and right rotation carousel items
-       * @param {*} rotationItems 
+       * @param {*} rotationItems
        */
 
     }, {
@@ -739,7 +739,7 @@ var __webpack_exports__ = {};
       }
       /**
        * Set the currently active item and data attribute
-       * @param {*} position 
+       * @param {*} position
        */
 
     }, {

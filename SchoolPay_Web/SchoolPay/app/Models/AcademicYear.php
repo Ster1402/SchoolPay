@@ -17,4 +17,9 @@ class AcademicYear extends Model
     public function paymentConfigs(){
         return $this->hasMany(PaymentConfig::class);
     }
+
+    //Attributes
+    public function getSlugAttribute() {
+        return str_replace(" ", "", $this->period);
+    }
 }

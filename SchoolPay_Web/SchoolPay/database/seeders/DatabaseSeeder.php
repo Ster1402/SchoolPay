@@ -53,23 +53,32 @@ class DatabaseSeeder extends Seeder
             'school_id' => $enspd->id,
         ]);
 
+        $git = Discipline::factory()->create([
+            'school_id' => $enspd->id,
+            'name' => 'Genie Logiciel',
+            'slug' => \Str::slug('Genie Logiciel'),
+        ]);
+
         Student::factory()->create([
+            'registerNumber' => '21G00804',
             'user_id' => User::factory()->create([
                 'name' => 'NDE TSAPI STEVE-ROLAND',
                 'email' => 'sterdevs@gmail.com',
                 'username' => 'SterDevs',
                 'category_id' => $studentCat->id]
             )->id,
-            'discipline_id' => Discipline::all()->random()->id
+            'discipline_id' => $git->id
         ]);
 
-        Student::factory(200)->create([
-            'user_id' => User::factory()->create(['category_id' => $studentCat->id])->id,
-            'discipline_id' => Discipline::all()->random()->id
-        ]);
+        for($i=0; $i<300; $i++){
+            Student::factory()->create([
+                'user_id' => User::factory()->create(['category_id' => $studentCat->id])->id,
+                'discipline_id' => Discipline::all()->random()->id
+            ]);
+        }
 
         PaymentConfig::factory(30)->create();
 
-        Payment::factory(400)->create();
+        Payment::factory(500)->create();
     }
 }

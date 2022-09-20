@@ -19,7 +19,7 @@ class StudentFactory extends Factory
             'user_id' => User::factory(),
             'discipline_id' => Discipline::factory(),
             'phoneNumber' => $this->faker->phoneNumber,
-            'registerNumber' => $this->faker->regexify('[1-2][1-8]G00([0-9]{3,3})'),
+            'registerNumber' => $this->faker->unique()->regexify('[1-2][1-8]G00([0-9]{3,3})'),
             'IDCardNumber' => $this->faker->numerify('###########'),
             'birthday' => $this->faker->dateTime
         ];

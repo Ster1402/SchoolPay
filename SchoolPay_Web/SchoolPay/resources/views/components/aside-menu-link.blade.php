@@ -5,10 +5,11 @@
 ])
 
 @php
-    $classes = $subMenu ? "aside-menu-link text-left flex items-center p-2 py-4 ml-4 pl-11 w-auto text-base font-normal rounded-lg transition duration-75 group hover:bg-[#0099FF] dark:text-white dark:hover:bg-[#0099FF]"
-                        : "aside-menu-link text-left flex items-center p-2 py-4 text-base font-normal rounded-lg dark:text-white hover:bg-[#0099FF] dark:hover:bg-[#0099FF]";
+    $classes = $subMenu ? "aside-menu-link text-left flex items-center p-2 py-4 ml-4 pl-11 w-auto text-base font-normal rounded-lg transition duration-75 group hover:text-white text-gray-900"
+                        : "aside-menu-link text-left flex items-center p-2 py-4 text-base font-normal rounded-lg text-gray-900 hover:text-white";
 
-    $classes .= $active ? " bg-[#0099FF] text-white " : " text-gray-900"
+    $classes .= $active ? " bg-gradient-logo text-white " : " bg-gray-100 text-gray-900 "
+
 @endphp
 
 <a {{ $attributes->merge(['class' => $classes]) }}>
@@ -16,7 +17,7 @@
         {{ $iconValue }}
     </x-icon>
 
-    <span class="ml-3 text-menu-link">
+    <span class="ml-3 {{ $active ? 'text-white' : ''  }}">
         {{ $slot }}
     </span>
 </a>

@@ -10,15 +10,6 @@ use function PHPUnit\Framework\isNull;
 
 class StudentTable extends Component
 {
-    /**
-     * Create a new component instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        //
-    }
 
     /**
      * Get the view / contents that represent the component.
@@ -35,10 +26,10 @@ class StudentTable extends Component
 
         $students = Student::whereHas('discipline', static function ($query) use($school) {
            $query->where('school_id', $school->id);
-        })->with('discipline');
+        })->with('discipline')->filter(request(['discipline', 'status', 'academicYear', 'search']));
 
         return view('components.student-table', [
-            'students' => $students->paginate(20),
+            'students' => $students->paginate(5),
         ]);
     }
 }

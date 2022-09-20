@@ -13,17 +13,18 @@
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
-        <script src="{{ asset('js/flowbite.js') }}"></script>
+        <script src="{{ asset('js/flowbite.js') }}" defer></script>
 
     </head>
     <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gradient">
+        <div class="min-h-screen bg-gradient pb-4">
             @include('layouts.navigation')
 
             <!-- Page Content -->
-            <main>
+            <main class="flex justify-between h-full min-h-dashboard">
                 {{ $slot }}
             </main>
+
         </div>
     </body>
 </html>

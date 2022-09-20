@@ -9,6 +9,8 @@ class School extends Model
 {
     use HasFactory;
 
+    protected $with = ['user'];
+
     //Relationships
     public function account(){
         return $this->belongsTo(Account::class);
