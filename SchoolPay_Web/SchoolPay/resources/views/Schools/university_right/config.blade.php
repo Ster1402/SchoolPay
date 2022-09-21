@@ -1,3 +1,7 @@
-<x-app-layout>
-    
-</x-app-layout>
+<x-dashboard-layout-school>
+    <x-slot name="title">
+
+    </x-slot>
+
+
+</x-dashboard-layout-school>

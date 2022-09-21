@@ -2,25 +2,36 @@
 
     <x-aside-menu>
 
-        @if(request()->routeIs('school.student'))
+        @if(request()->routeIs('school.student.*'))
             <li>
                 <x-aside-menu-link href="{{ route('school.student.index') }}"
                                    :active="request()->routeIs('school.student.index')"
-                                   icon="user-group"
-                >
+                                   icon="user-group">
                     {{ __("Afficher étudiants") }}
                 </x-aside-menu-link>
             </li>
             <li>
                 <x-aside-menu-link href="{{ route('school.student.create') }}"
                                    :active="request()->routeIs('school.student.create')"
-                                   icon="user-add"
-                >
+                                   icon="user-add">
                     {{ __("Ajouter un étudiant") }}
                 </x-aside-menu-link>
             </li>
-        @else
-            {{-- Link for University right management --}}
+        @elseif(request()->routeIs('school.university-right.*'))
+            <li>
+                <x-aside-menu-link href="{{ route('school.university-right.config') }}"
+                                   :active="request()->routeIs('school.university-right.config')"
+                                   icon="date">
+                    {{ __("Configurer") }}
+                </x-aside-menu-link>
+            </li>
+            <li>
+                <x-aside-menu-link href="{{ route('school.university-right.history') }}"
+                                   :active="request()->routeIs('school.university-right.history')"
+                                   icon="history">
+                    {{ __("Historique") }}
+                </x-aside-menu-link>
+            </li>
         @endif
 
     </x-aside-menu>
@@ -33,7 +44,7 @@
         </div>
 
         {{ $slot }}
-        
+
         @if(session()->has('new-student'))
             <x-toast type="success"
                      :message="session('new-student')"/>
@@ -49,6 +60,10 @@
                      :message="session('delete-student')"/>
         @endif
 
+        @if(session()->has('new-date-config'))
+            <x-toast type="success"
+                     :message="session('new-date-config')"/>
+        @endif
     </div>
 
 </x-app-layout>

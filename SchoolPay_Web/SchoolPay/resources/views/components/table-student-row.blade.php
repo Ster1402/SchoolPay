@@ -32,16 +32,8 @@
         <form method="GET" action="{{ route("school.student.edit", ['student' => $student->id])}}">
             @csrf
             <button type="submit"
-                    class="py-4 font-medium color-logo hover:underline pr-3">
+                    class="py-4 font-medium color-logo hover:underline">
                 Edit
-            </button>
-        </form>
-        <form method="POST" action="{{ route("school.student.destroy", ['student' => $student->id])}}">
-            @csrf
-            @method('DELETE')
-            <button type="submit"
-                    class="py-4 font-medium text-red-600 hover:underline">
-                Remove
             </button>
         </form>
     </td>

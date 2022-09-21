@@ -16,8 +16,8 @@
         <select {{ $attributes->merge(['class' => $classes]) }}
                 name="{{ $name }}"
         >
-            <option disabled>
-                Select {{ $label }}
+            <option selected disabled>
+                Choisir {{ $label }}
             </option>
 
             {{ $slot }}

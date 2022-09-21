@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SchoolUniversityRightController;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SchoolStudentController;
@@ -31,14 +32,10 @@ Route::middleware('auth')->group(static function () {
         //University right management
         Route::prefix('university-right')->name('university-right.')->group(static function () {
             //Configuration of date
-            Route::get('/date-configuration', static function () {
-
-            })->name('config');
+            Route::get('/date-configuration',[SchoolUniversityRightController::class, 'config'])->name('config');
 
             //Histories of date configuration
-            Route::get('/date-configuration/history', static function () {
-
-            })->name('history');
+            Route::get('/date-configuration/history',[SchoolUniversityRightController::class, 'history'])->name('history');
         });
 
     });

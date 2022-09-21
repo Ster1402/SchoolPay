@@ -83,6 +83,30 @@
          fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
     </svg>
+@elseif($name === "date")
+    <svg aria-hidden="true"
+         class="flex-shrink-0 w-6 h-6 {{ $color }} transition duration-75 dark:{{ $color }} group-hover:text-gray-900 dark:group-hover:text-white"
+         fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd"
+              d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+              clip-rule="evenodd"></path>
+    </svg>
+@elseif($name === "user-group")
+    <svg aria-hidden="true"
+         class="flex-shrink-0 w-6 h-6 {{ $color }} transition duration-75 group-hover:text-white"
+         fill="currentColor"
+         viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"></path>
+    </svg>
+@elseif($name === "user-add")
+    <svg aria-hidden="true"
+         class="flex-shrink-0 w-6 h-6 {{ $color }} transition duration-75 group-hover:text-white"
+         fill="currentColor"
+         viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z"></path>
+    </svg>
 @elseif($name === "secure")
     <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 w-6 h-6 {{ $color }} transition duration-75"
          fill="none" viewBox="0 0 24 24" stroke="currentColor"
