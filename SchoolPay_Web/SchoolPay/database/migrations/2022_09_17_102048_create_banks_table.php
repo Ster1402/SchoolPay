@@ -13,9 +13,9 @@ class CreateBanksTable extends Migration
      */
     public function up()
     {
-        Schema::create('banks', function (Blueprint $table) {
+        Schema::create('banks',static function (Blueprint $table) {
             $table->id();
-            $table->enum('name', ['UBA']); //Supported Bank
+            $table->enum('name', ['UBA', 'MTN-MoMo']); //Supported Bank
             $table->timestamps();
         });
     }

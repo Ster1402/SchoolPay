@@ -12,6 +12,7 @@ class Student extends Model
     use HasFactory;
 
     protected $with = ['user'];
+    protected $guarded = ['id'];
 
     //Relationships
     public function user()

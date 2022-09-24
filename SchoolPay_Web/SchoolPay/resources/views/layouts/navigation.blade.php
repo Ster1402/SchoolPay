@@ -31,6 +31,20 @@
                         </x-nav-link>
                     @else
                         {{-- Nav links for students --}}
+                        <x-nav-link :href="route('student.dashboard')"
+                                    :active="request()->routeIs('student.dashboard')">
+                            {{ __('Accueil') }}
+                        </x-nav-link>
+
+                        <x-nav-link href="{{ route('student.profil.student.index') }}"
+                                    :active="request()->routeIs('student.profil.student.*')">
+                            {{ __('Profil') }}
+                        </x-nav-link>
+
+                        <x-nav-link href="{{ route('student.payments.create') }}"
+                                    :active="request()->routeIs('student.payments.*')">
+                            {{ __('Paiement') }}
+                        </x-nav-link>
                     @endif
 
                 </div>

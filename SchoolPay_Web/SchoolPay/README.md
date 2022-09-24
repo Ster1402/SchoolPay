@@ -1,21 +1,24 @@
 
-## À-propos SchoolPay
+## À-propos SchoolPay version Web
 
-Développer dans le cadre d'un Hackathon lancer par MTN Cameroun.
-SchoolPay est une plateforme visant à simplifier la gestion des paiements des droits universitaires (Quitus et Visite Médicale) d'une part pour les établissements et surtout pour les étudiants.
+La version Web de SchoolPay permet principalement aux établissements de pouvoir gérer plus simplement les paiements des 
+ droits universitaires de leur étudiants en étant notifié en temps réelle des paiements effectués. Les étudiants quant
+ à eux peuvent rapidement effectués les paiements de leur droits universitaires et récuperer à tout instant leur reçu de 
+ paiement.
 
-- Pas besoin de se déplacer pour s'acquiter de ses droits universitaires
-- Faciliter l'archivage des informations de paiement de droits universitaires
-- Controller la période de paiement des droits universitaires
-- Paiement simplifier par **l'API MTN MoMo**
 
-SchoolPay se veut facile d'utilisation, sécuriser et surtout permettre un gain de temps significatif dans la gestion des paiement de droits universitaires.
 
-## Comment utiliser SchoolPay
+## Fonctionnalités côté Etablissement:
 
-- Pour les **établissements**, pour intégrer ce moyen de paiement, il suffit de nous le faire savoir dans un mail adresser à [sterdevs@gmain.com](mailto:sterdevs@gmail.com). Et nous vous créerons un compte sur la plateforme vous permettant d'y avoir accès.
-- Pour les **étudiants**, les établissements seront ceux qui vous créerons des comptes sur la plateforme afin de pouvoir bénéficier de ce service.
+- *Affichage et filtrage des étudiants* par discipline, statut de paiement (ceux ayant payé la première tranche, la seconde
+ou la visite médicale...)
+- *Téléchargement de la liste (filtrée) des étudiants en CSV*
+- *Création de compte étudiant* par un formulaire pour un ajout unique ou via l'importation d'une fichier CSV
+- *Notification en temps réelle d'un paiement effectué*
 
-## Vulnerabilités et sécurité
+## Fonctionnalités côté Etudiant:
 
-Si vous découvrez une quelconque faille de sécurité dans la plateforme bien vouloir écrire un mail à [sterdevs@gmain.com](mailto:sterdevs@gmail.com) pour préciser le problème.
+- *Gestion de son profil*: modification, suppression du compte, affichage des informations
+- *Paiement des droits universitaires* via l'API *MTN MoMo*
+- *Consultation de l'historique de paiement*
+- *Téléchargement d'un reçu de paiement en PDF*

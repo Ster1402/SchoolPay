@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\SchoolUniversityRightController;
+use App\Http\Controllers\StudentController;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SchoolStudentController;
@@ -46,6 +48,21 @@ Route::middleware('auth')->group(static function () {
         Route::get('/', static function () {
             return view('Students.home');
         })->name('student.dashboard');
+
+        //Profil
+        Route::prefix('profil')->name('student.profil.')->group(static function () {
+            Route::resource('student', StudentController::class)->except(['create', 'store']);
+        });
+
+        //Payments
+        Route::prefix('payments')->name('student.')->group(static function () {
+
+            Route::get('/', [PaymentController::class, 'create'])->name('payments.create');
+            Route::post('/', [PaymentController::class, 'store'])->name('payments.store');
+            Route::post('/history', [PaymentController::class, 'history'])->name('payments.history');
+
+        });
+
     });
 
 });

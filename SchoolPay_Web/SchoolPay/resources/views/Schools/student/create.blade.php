@@ -5,11 +5,11 @@
             {{ __("Ajouter un étudiant, ") }}
         </h1>
 
-        <div>
+        <div  class="flex items-center">
             {{-- Téléchargement de la liste des étudiants --}}
             <a href="{{ route('school.student.import-list') }}">
-                <x-button title="Vous pouvez appliquer des filtres pour réduire la liste"
-                          class="bg-gradient text-sm font-bold text-white">
+                <x-button title="Vous pouvez importer la liste via un fichier csv"
+                          class="bg-gradient-logo text-sm font-bold text-white">
                     {{ __('Importer le fichier des étudiants') }}
                 </x-button>
             </a>
@@ -17,12 +17,12 @@
 
     </x-slot>
 
-    <div class="w-full bg-gray-800 rounded-lg border-l-2 border-b-2 border-[#ffc371] mt-2 p-4">
+    <div class="w-full bg-transparent mt-4 rounded-lg border-l-2 border-r-2 border-b-2 border-[#ffc371] p-4">
         <form method="POST" action="{{ route("school.student.store") }}">
             @csrf
 
             <div class="grid md:grid-cols-3 md:gap-6">
-                <x-form-input name="register_number"
+                <x-form-input name="registerNumber"
                               label="{{ __('Matricule') }}"
                 />
                 <x-form-input name="name"
@@ -53,8 +53,11 @@
                               label="{{ __('Confirmer le mot de passe') }}"/>
             </div>
 
-            <x-form-select name="discipline_id">
+            <x-form-select class="text-gray-600"
+                name="discipline_id">
+
                 <x-slot name="label">Filière</x-slot>
+
                 @foreach($disciplines as $discipline)
                     <option class="p-2" value="{{ $discipline->id }}">
                         {{ ucwords($discipline->name) }}
@@ -63,11 +66,11 @@
             </x-form-select>
 
             <div class="w-full flex justify-end">
-                <x-form-button class="bg-gradient text-white " type="reset">
+                <x-form-button class="hover-bg-logo px-6 text-white " type="reset">
                     Reset
                 </x-form-button>
 
-                <x-form-button class="bg-gradient text-white">
+                <x-form-button class="hover-bg-logo px-6 text-white">
                     Create
                 </x-form-button>
             </div>

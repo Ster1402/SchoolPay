@@ -14,7 +14,7 @@
                 <x-aside-menu-link href="{{ route('school.student.create') }}"
                                    :active="request()->routeIs('school.student.create')"
                                    icon="user-add">
-                    {{ __("Ajouter un étudiant") }}
+                    {{ __("Ajouter étudiant") }}
                 </x-aside-menu-link>
             </li>
         @elseif(request()->routeIs('school.university-right.*'))
@@ -45,25 +45,21 @@
 
         {{ $slot }}
 
-        @if(session()->has('new-student'))
+        @if(session()->has('success'))
             <x-toast type="success"
-                     :message="session('new-student')"/>
+                     :message="session('success')"/>
         @endif
 
-        @if(session()->has('update-student'))
-            <x-toast type="success"
-                     :message="session('update-student')"/>
+        @if(session()->has('danger'))
+            <x-toast type="error"
+                     :message="session('danger')"/>
         @endif
 
-        @if(session()->has('delete-student'))
-            <x-toast type="success"
-                     :message="session('delete-student')"/>
+        @if(session()->has('warning'))
+            <x-toast type="error"
+                     :message="session('warning')"/>
         @endif
 
-        @if(session()->has('new-date-config'))
-            <x-toast type="success"
-                     :message="session('new-date-config')"/>
-        @endif
     </div>
 
 </x-app-layout>
