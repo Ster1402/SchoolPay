@@ -25,7 +25,7 @@ body {
 }
 
 .item {
-    background: rgba(18, 18, 18, .5);
+    background: linear-gradient(to right, #78020666, #06116166);
 }
 
 .bg{
@@ -35,27 +35,27 @@ body {
 }
 
 .bg-item-student-1 {
-    background-image: url('/images/bg-school.jpg');
+    background-image: url('/images/bg-school-student.jpg');
 }
 
 .bg-item-student-2{
-    background-image: url("/images/bg-school.jpg");
+    background-image: url("/images/bg-student-date.jpg");
 }
 
 .bg-item-student-3{
-    background-image: url("/images/bg-school.jpg");
+    background-image: url("/images/bg-student-notification.jpg");
 }
 
 .bg-item-school-1 {
-    background-image: url('/images/bg-school.jpg');
+    background-image: url('/images/bg-school-student.jpg');
 }
 
 .bg-item-school-2{
-    background-image: url("/images/bg-school.jpg");
+    background-image: url("/images/bg-student-notification.jpg");
 }
 
 .bg-item-school-3{
-    background-image: url("/images/bg-school.jpg");
+    background-image: url("/images/bg-student-date.jpg");
 }
 
 .hover-bg-logo{

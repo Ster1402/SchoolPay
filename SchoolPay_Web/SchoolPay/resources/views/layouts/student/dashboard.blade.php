@@ -21,21 +21,22 @@
             <li>
                 <x-aside-menu-link href="{{ route('student.profil.student.index') }}"
                                    :active="request()->routeIs('student.profil.student.index')"
-                                   icon="date">
+                                   icon="user">
                     {{ __("Afficher") }}
                 </x-aside-menu-link>
             </li>
             <li>
-                <x-aside-menu-link href="{{ route('student.profil.student.edit') }}"
-                                   :active="request()->routeIs('student.profil.student.edit')"
-                                   icon="history">
+                <x-aside-menu-link href="{{ route('student.profil.student.edit', ['student' => $student->id]) }}"
+                                   :active="request()->routeIs('student.profil.student.edit', ['student' => $student->id])"
+                                   icon="edit">
                     {{ __("Modifier") }}
                 </x-aside-menu-link>
             </li>
             <li>
-                <x-aside-menu-link href="{{ route('student.profil.student.destroy') }}"
-                                   :active="request()->routeIs('student.profil.student.destroy')"
-                                   icon="history">
+                <x-aside-menu-link href="{{ route('student.profil.student.destroy', ['student' => $student->id]) }}"
+                                   :active="request()->routeIs('student.profil.student.destroy', ['student' => $student->id])"
+                                    icon="remove"
+                >
                     {{ __("Supprimer le compte") }}
                 </x-aside-menu-link>
             </li>
@@ -53,5 +54,20 @@
         {{ $slot }}
 
     </div>
+
+    @if(session()->has('success'))
+        <x-toast type="success"
+                 :message="session('success')"/>
+    @endif
+
+    @if(session()->has('danger'))
+        <x-toast type="error"
+                 :message="session('danger')"/>
+    @endif
+
+    @if(session()->has('warning'))
+        <x-toast type="error"
+                 :message="session('warning')"/>
+    @endif
 
 </x-app-layout>

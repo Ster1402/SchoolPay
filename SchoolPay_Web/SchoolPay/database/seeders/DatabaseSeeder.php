@@ -34,7 +34,7 @@ class DatabaseSeeder extends Seeder
 
         $enspd_user = User::factory()->create([
             'username' => 'ENSPD',
-            'name' => 'Ecole Nationale Superieur Polytechnique de Douala',
+            'name' => 'Ecole Nationale Supérieure Polytechnique de Douala',
             'email' => 'enspd@udo.com',
             'category_id' => $schoolCat->id
         ]);

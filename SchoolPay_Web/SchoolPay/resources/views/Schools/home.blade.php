@@ -29,7 +29,7 @@
                 </div>
                 <!-- Item 3 -->
                 <div
-                    class="bg bg-item-school-2 duration-700 ease-linear absolute inset-0 transition-all transform -translate-x-full z-10"
+                    class="bg bg-item-school-3 duration-700 ease-linear absolute inset-0 transition-all transform -translate-x-full z-10"
                     data-carousel-item="">
                 <span
                     class="item w-full h-full px-10 flex justify-center items-center absolute text-center text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 sm:text-3xl text-white">

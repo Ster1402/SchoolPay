@@ -8,31 +8,31 @@
                 <div
                     class="bg bg-item-student-1 duration-700 ease-linear absolute inset-0 transition-all transform translate-x-0 z-20"
                     data-carousel-item="">
-                <span
-                    class="item w-full h-full px-10 flex justify-center items-center absolute text-center text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 sm:text-3xl text-white">
-                    <p>Payer rapidement et en toute simplicité vos <strong
-                            class="color-logo">droits universitaires</strong>.</p>
-                </span>
+                    <span
+                        class="item w-full h-full px-10 flex justify-center items-center absolute text-center text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 sm:text-3xl text-white">
+                        <p>Payer rapidement et en toute simplicité vos <strong
+                                class="color-logo">droits universitaires</strong>.</p>
+                    </span>
                 </div>
                 <!-- Item 2 -->
                 <div
                     class="bg bg-item-student-2 duration-700 ease-linear absolute inset-0 transition-all transform translate-x-full z-10"
                     data-carousel-item="">
-                <span
-                    class="item w-full h-full px-10 flex justify-center items-center absolute text-center text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 sm:text-3xl text-white">
-                    <p>
-                        Conserver des <strong class="color-logo">reçus numériques</strong> de tous vos paiements effectués dans la plateforme.
-                    </p>
-                </span>
+                    <span
+                        class="item w-full h-full px-10 flex justify-center items-center absolute text-center text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 sm:text-3xl text-white">
+                        <p>
+                            Conserver des <strong class="color-logo">reçus numériques</strong> de tous vos paiements effectués dans la plateforme.
+                        </p>
+                    </span>
                 </div>
                 <!-- Item 3 -->
                 <div
-                    class="bg bg-item-student-2 duration-700 ease-linear absolute inset-0 transition-all transform -translate-x-full z-10"
+                    class="bg bg-item-student-3 duration-700 ease-linear absolute inset-0 transition-all transform -translate-x-full z-10"
                     data-carousel-item="">
                 <span
                     class="item w-full h-full px-10 flex justify-center items-center absolute text-center text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 sm:text-3xl text-white">
                     <p>
-                        Recevez en temps réelle les <strong class="color-logo">notifications</strong>
+                        Recevez en temps réel les <strong class="color-logo">notifications</strong>
                     sur la période de paiement des <strong class="color-logo">droits universitaires</strong>
                     fournis par votre école.
                     </p>

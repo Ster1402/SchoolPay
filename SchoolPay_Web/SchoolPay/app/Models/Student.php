@@ -13,6 +13,7 @@ class Student extends Model
 
     protected $with = ['user'];
     protected $guarded = ['id'];
+    protected $casts = ['birthday'];
 
     //Relationships
     public function user()
