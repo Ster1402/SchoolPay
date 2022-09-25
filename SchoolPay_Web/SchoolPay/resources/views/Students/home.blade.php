@@ -53,7 +53,7 @@
             </div>
 
             <div class="w-full flex justify-center mt-10 mb-4">
-                <a href="#">
+                <a href="{{ route('student.payments.create') }}">
                     <x-button class="bg-gradient-logo font-bold text-gray-100">
                         {{ __('Payer vos droits universitaires') }}
                     </x-button>
