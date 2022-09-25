@@ -59,7 +59,7 @@ Route::middleware('auth')->group(static function () {
 
             Route::get('/', [PaymentController::class, 'create'])->name('payments.create');
             Route::post('/', [PaymentController::class, 'store'])->name('payments.store');
-            Route::post('/history', [PaymentController::class, 'history'])->name('payments.history');
+            Route::get('/history', [PaymentController::class, 'history'])->name('payments.history');
 
         });
 
