@@ -25,14 +25,16 @@ class DatabaseSeeder extends Seeder
     {
         AcademicYear::factory(5)->create();
 
-        Bank::factory()->create();
+        Bank::factory()->create([
+            'name' => 'MTN-MoMo',
+        ]);
 
         $schoolCat = Category::factory()->create(['name' => 'school']);
         $studentCat = Category::factory()->create(['name' => 'student']);
 
         $enspd_user = User::factory()->create([
             'username' => 'ENSPD',
-            'name' => 'Ecole Nationale Superieur Polytechnique de Douala',
+            'name' => 'Ecole Nationale Supérieure Polytechnique de Douala',
             'email' => 'enspd@udo.com',
             'category_id' => $schoolCat->id
         ]);

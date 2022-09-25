@@ -5,42 +5,60 @@
             <!-- Carousel wrapper -->
             <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
                 <!-- Item 1 -->
-                <div class="duration-700 ease-linear absolute inset-0 transition-all transform translate-x-0 z-20"
-                     data-carousel-item="">
+                <div
+                    class="bg bg-item-school-1 duration-700 ease-linear absolute inset-0 transition-all transform translate-x-0 z-20"
+                    data-carousel-item="">
                 <span
-                    class="absolute text-center text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 sm:text-3xl text-white">
-                    Gérer facilement et en toutes confidentialités les informations de vos <strong class="color-logo">étudiants</strong>.
+                    class="item w-full h-full px-10 flex justify-center items-center absolute text-center text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 sm:text-3xl text-white">
+                    <p>
+                        Gérer facilement et en toutes confidentialités
+                        les informations de vos <strong class="color-logo">étudiants</strong>.
+                    </p>
                 </span>
                 </div>
                 <!-- Item 2 -->
-                <div class="duration-700 ease-linear absolute inset-0 transition-all transform translate-x-full z-10"
-                     data-carousel-item="">
+                <div
+                    class="bg bg-item-school-2 duration-700 ease-linear absolute inset-0 transition-all transform translate-x-full z-10"
+                    data-carousel-item="">
                 <span
-                    class="absolute text-center text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 sm:text-3xl text-white">
-                    Obtenir rapidement les informations sur les paiements de <strong class="color-logo">droits universitaires</strong> effectués par vos étudiants.
+                    class="item w-full h-full px-10 flex justify-center items-center absolute text-center text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 sm:text-3xl text-white">
+                    <p>
+                        Obtenir rapidement les informations sur les paiements de <strong class="color-logo">droits universitaires</strong> effectués par vos étudiants.
+                    </p>
                 </span>
                 </div>
                 <!-- Item 3 -->
-                <div class="duration-700 ease-linear absolute inset-0 transition-all transform -translate-x-full z-10"
-                     data-carousel-item="">
+                <div
+                    class="bg bg-item-school-3 duration-700 ease-linear absolute inset-0 transition-all transform -translate-x-full z-10"
+                    data-carousel-item="">
                 <span
-                    class="absolute text-center text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 sm:text-3xl text-white">
-                    Configurer les <strong class="color-logo">dates de paiements</strong> autorisées pour les <strong
-                        class="color-logo">quitus</strong> et <strong class="color-logo">visite médicale</strong>.
+                    class="item w-full h-full px-10 flex justify-center items-center absolute text-center text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 sm:text-3xl text-white">
+                    <p>
+                        Configurer les <strong class="color-logo">dates de paiements</strong> autorisées pour les <strong
+                            class="color-logo">quitus</strong> et <strong class="color-logo">visite médicale</strong>.
+                    </p>
                 </span>
                 </div>
+                <!-- Slider indicators -->
+                <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
+                    <button type="button" class="w-3 h-3 rounded-full bg-white  " aria-current="true"
+                            aria-label="Slide 1" data-carousel-slide-to="0"></button>
+                    <button type="button"
+                            class="w-3 h-3 rounded-full bg-white/50  /50 hover:bg-white dark:hover:bg-gray-800"
+                            aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+                    <button type="button"
+                            class="w-3 h-3 rounded-full bg-white/50  /50 hover:bg-white dark:hover:bg-gray-800"
+                            aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+                </div>
+
             </div>
 
-            <!-- Slider indicators -->
-            <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
-                <button type="button" class="w-3 h-3 rounded-full bg-white  " aria-current="true"
-                        aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                <button type="button"
-                        class="w-3 h-3 rounded-full bg-white/50  /50 hover:bg-white dark:hover:bg-gray-800"
-                        aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-                <button type="button"
-                        class="w-3 h-3 rounded-full bg-white/50  /50 hover:bg-white dark:hover:bg-gray-800"
-                        aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+            <div class="w-full flex justify-center mt-10 mb-4">
+                <a href="{{route('school.student.index')}}">
+                    <x-button class="bg-gradient-logo font-bold text-gray-100">
+                        {{ __('Commencer à gérer vos étudiants') }}
+                    </x-button>
+                </a>
             </div>
 
             <!-- Slider controls -->
@@ -68,13 +86,7 @@
             </button>
         </div>
 
-        <div class="w-full flex justify-center mt-4 mb-4">
-            <a href="{{route('school.student.index')}}">
-                <x-button class="bg-gradient-logo font-bold text-gray-100">
-                    {{ __('Commencer à gérer vos étudiants') }}
-                </x-button>
-            </a>
-        </div>
     </div>
 
 </x-app-layout>
+

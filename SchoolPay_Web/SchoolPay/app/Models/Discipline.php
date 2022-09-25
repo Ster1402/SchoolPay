@@ -9,6 +9,8 @@ class Discipline extends Model
 {
     use HasFactory;
 
+    protected $with = ['school'];
+
     //Relationships
     public function students(){
         return $this->hasMany(Student::class);

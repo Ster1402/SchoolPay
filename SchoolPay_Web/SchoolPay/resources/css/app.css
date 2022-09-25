@@ -24,6 +24,48 @@ body {
     color: #ffc371
 }
 
+.item {
+    background: linear-gradient(to right, #78020666, #06116166);
+}
+
+.bg{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg-item-student-1 {
+    background-image: url('/images/bg-school-student.jpg');
+}
+
+.bg-item-student-2{
+    background-image: url("/images/bg-student-date.jpg");
+}
+
+.bg-item-student-3{
+    background-image: url("/images/bg-student-notification.jpg");
+}
+
+.bg-item-school-1 {
+    background-image: url('/images/bg-school-student.jpg');
+}
+
+.bg-item-school-2{
+    background-image: url("/images/bg-student-notification.jpg");
+}
+
+.bg-item-school-3{
+    background-image: url("/images/bg-student-date.jpg");
+}
+
+.hover-bg-logo{
+    background: transparent;
+}
+
+.hover-bg-logo:hover{
+    background: linear-gradient(to right, #ff5f6d, #ffc371);
+}
+
 .aside-menu-link:hover{
     background: linear-gradient(to right, #ff5f6d, #ffc371);
 }

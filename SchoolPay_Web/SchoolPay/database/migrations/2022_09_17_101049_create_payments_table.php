@@ -17,7 +17,10 @@ class CreatePaymentsTable extends Migration
             $table->id();
             $table->foreignId('student_id')->constrained()->cascadeOnDelete();
             $table->foreignId('academic_year_id');
-            $table->enum('type', ['discharge-first-part', 'discharge-second-part',  'medicalVisit']); //Supported type
+            $table->string('payerName');
+            $table->string('payerIDCard');
+            $table->string('payerPhoneNumber');
+            $table->enum('type', ['discharge-all', 'discharge-first-part', 'discharge-second-part',  'medicalVisit']); //Supported type
             $table->integer('amount');
             $table->timestamp('payAt');
             $table->timestamps();

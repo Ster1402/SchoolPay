@@ -2,22 +2,23 @@
 
 @error($name)
 @php
-    $error_color = 'border-red-500'
+    $error_color = 'border-red-500';
 @endphp
 @enderror
 
 @php
     $border_color = $error_color ?? 'border-gray-300';
-    $classes = "bg-gray-800 border-0 border-b-2 $border_color appearance-none text-sm  focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-1 text-white"
+    $classes = "bg-transparent border-0 border-b-2 $border_color appearance-none text-sm block w-full p-2.5 pl-1 text-white"
 @endphp
 
 <div>
     <label>
         <select {{ $attributes->merge(['class' => $classes]) }}
                 name="{{ $name }}"
+                required
         >
-            <option disabled>
-                Select {{ $label }}
+            <option selected disabled>
+                Choisir {{ $label }}
             </option>
 
             {{ $slot }}

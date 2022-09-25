@@ -19,7 +19,7 @@ class CreateStudentsTable extends Migration
             $table->foreignId('discipline_id');
             $table->string('phoneNumber')->nullable();
             $table->string('registerNumber');
-            $table->string('IDCardNumber');
+            $table->string('IDCardNumber')->nullable();
             $table->timestamp('birthday');
             $table->timestamps();
         });

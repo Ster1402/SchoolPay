@@ -18,7 +18,7 @@ class AccountFactory extends Factory
         return [
             'bank_id' => Bank::factory(),
             'school_id' => School::factory(),
-            'number' => $this->faker->regexify('[0-9]{10,10} - [0-9]{3,3}')
+            'number' => $this->faker->regexify('67[0-9]{7,7}')
         ];
     }
 }

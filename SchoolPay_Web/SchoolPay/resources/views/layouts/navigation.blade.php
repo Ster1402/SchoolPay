@@ -22,14 +22,31 @@
                             {{ __('Accueil') }}
                         </x-nav-link>
                         <x-nav-link :href="route('school.student.index')"
-                                    :active="request()->routeIs('school.student.index')">
+                                    :active="request()->routeIs('school.student.*')">
                             {{ __('Etudiants') }}
                         </x-nav-link>
                         <x-nav-link :href="route('school.university-right.config')"
-                                    :active="request()->routeIs('school.university-right.config')">
+                                    :active="request()->routeIs('school.university-right.*')">
                             {{ __('Droits universitaires') }}
                         </x-nav-link>
+                    @else
+                        {{-- Nav links for students --}}
+                        <x-nav-link :href="route('student.dashboard')"
+                                    :active="request()->routeIs('student.dashboard')">
+                            {{ __('Accueil') }}
+                        </x-nav-link>
+
+                        <x-nav-link href="{{ route('student.profil.student.index') }}"
+                                    :active="request()->routeIs('student.profil.student.*')">
+                            {{ __('Profil') }}
+                        </x-nav-link>
+
+                        <x-nav-link href="{{ route('student.payments.create') }}"
+                                    :active="request()->routeIs('student.payments.*')">
+                            {{ __('Paiement') }}
+                        </x-nav-link>
                     @endif
+
                 </div>
 
                 <x-dropdown align="right" width="48">
@@ -57,7 +74,7 @@
                             <x-dropdown-link :href="route('logout')"
                                              onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                {{ __('Log Out') }}
+                                {{ __("Déconnexion") }}
                             </x-dropdown-link>
                         </form>
                     </x-slot>
@@ -81,4 +98,5 @@
     </div>
 
     <!-- Responsive Navigation Menu -->
+
 </nav>
