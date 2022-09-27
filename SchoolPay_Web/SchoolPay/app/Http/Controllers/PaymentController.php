@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\API\SmsController;
 use App\Models\Payment;
 use App\Models\Student;
+use Carbon\Carbon;
+use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class PaymentController extends Controller
 {
@@ -20,9 +24,9 @@ class PaymentController extends Controller
             ->firstWhere('user_id', auth()->user()->id);
 
         $universityRights = [
-            'discharge-all' => 'Quitus - Totalité',
-            'discharge-first-part' => 'Quitus - première tranche',
-            'discharge-second-part' => 'Quitus - seconde tranche',
+            'discharge-all' => 'Scolarité - Totalité',
+            'discharge-first-part' => 'Scolarité - première tranche',
+            'discharge-second-part' => 'Scolarité - seconde tranche',
             'medicalVisit' => 'Visite Médicale',
         ];
 
@@ -36,11 +40,60 @@ class PaymentController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
-        dd($request);
+
+        $attributes = $request->validate([
+            'student_id' => ['required', Rule::exists('students', 'id')],
+            'registerNumber' => ['required', Rule::exists('students', 'registerNumber')],
+            'academic_year_id' => ['required', Rule::exists('academic_years', 'id')],
+            'payerName' => ['required', 'min:3', 'max:255'],
+            'payerIDCard' => ['required', 'integer'],
+            'payerPhoneNumber' => ['required', 'min:9', 'max:9'],
+            'type' => ['required'],
+            'amount' => ['required', 'integer']
+        ]);
+
+        /*TODO: Effectuer le paiement ici*/
+
+        $payAt = Carbon::now()->toDateTimeString();
+
+        $attributes['payAt'] = $payAt;
+
+        Payment::create($attributes);
+
+        $student = Student::find($attributes['student_id']);
+
+        $studentPhoneNumber = $student->phoneNumber;
+        $schoolName = $student->discipline->school->user->name;
+
+        $universityRights = [
+            'discharge-all' => 'Scolarité - Totalité',
+            'discharge-first-part' => 'Scolarité - première tranche',
+            'discharge-second-part' => 'Scolarité - seconde tranche',
+            'medicalVisit' => 'Visite Médicale',
+        ];
+
+        $type = $attributes['type'];
+        $typeName = $universityRights[$type];
+
+        //Sending confirmation message
+        try{
+            SmsController::sendSms($studentPhoneNumber,
+                $attributes['payerPhoneNumber'],
+                $schoolName,
+                $attributes['registerNumber'],
+                $student->user->name,
+                $typeName,
+                $attributes['amount']
+            );
+        }catch (GuzzleException $ex) {
+            //Logs exception
+        }
+
+        return redirect()->back()->with('success', 'Paiement effectué avec succès');
     }
 
     /**

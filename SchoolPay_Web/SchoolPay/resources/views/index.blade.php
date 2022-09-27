@@ -43,15 +43,15 @@
         <div class="w-full flex justify-center mb-4">
             <p class="text-3xl font-bold w-[450px] text-white text-center">
                 Plateforme de paiement en ligne des droits universitaires :<br>
-                <strong class="color-logo">Quitus</strong> & <strong class="color-logo">Visite Médicale</strong>
+                <strong class="color-logo">Scolarité</strong> & <strong class="color-logo">Visite Médicale</strong>
             </p>
         </div>
         <div class="w-full flex justify-center">
             <p class="text-xl font-bold w-[550px] text-gray-300 text-center leading-7">
-                Les établissements scolaire ont la possibilité de s'identifier sur la plateforme
-                pour permettre à leur étudiant de s'y connecter et utiliser le service de paiement de droits universitaires
-                <strong class="color-logo">SchoolPay</strong> et gérer facilement les étudiants s'étant acquiter de
-                leur droits.<br><br>
+                Les institutions d'enseignement supérieur ont la possibilité de s'identifier sur la plateforme
+                pour permettre à leur étudiant d'utiliser le service
+                <strong class="color-logo">SchoolPay</strong> pour s'acquiter de
+                leurs droits universitaires.<br><br>
                 <a href="{{ route('register') }}">
                     <x-button class="bg-gradient-logo">{{ __('Rejoignez-Nous') }}</x-button>
                 </a>

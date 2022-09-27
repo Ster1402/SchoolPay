@@ -14,7 +14,7 @@ class BankFactory extends Factory
     public function definition()
     {
         return [
-            'name' => collect(['MTN-MoMo'])->random(),
+            'name' => collect(['UBA'])->random(),
         ];
     }
 }

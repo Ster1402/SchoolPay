@@ -23,7 +23,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        AcademicYear::factory(5)->create();
+
+        for($i=0; $i<10; $i++){
+            $start = 2015 + $i;
+            $end = $start + 1;
+            AcademicYear::factory()->create([
+                'period' => "$start - $end"
+            ]);
+        }
 
         Bank::factory()->create([
             'name' => 'MTN-MoMo',
@@ -63,6 +70,7 @@ class DatabaseSeeder extends Seeder
 
         Student::factory()->create([
             'registerNumber' => '21G00804',
+            'phoneNumber' => '656656507',
             'user_id' => User::factory()->create([
                 'name' => 'NDE TSAPI STEVE-ROLAND',
                 'email' => 'sterdevs@gmail.com',

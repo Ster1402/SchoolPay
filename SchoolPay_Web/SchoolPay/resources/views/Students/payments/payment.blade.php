@@ -11,13 +11,13 @@
             @csrf
 
             <div class="grid md:grid-cols-2 md:gap-6">
-                <x-form-input name="register_number"
-                              disabled="disabled"
+                <input type="hidden" name="student_id" value="{{ $student->id }}"/>
+                <input type="hidden" name="academic_year_id" value="8"/>
+                <x-form-input name="registerNumber"
                               value="{{ $student->registerNumber }}"
                               label="{{ __('Matricule') }}"
                 />
                 <x-form-input name="name"
-                              disabled="disabled"
                               value="{{ $student->user->name }}"
                               label="{{ __('Nom et prénoms (étudiants)') }}"
                 />
@@ -38,11 +38,11 @@
             </div>
 
             <div class="grid md:grid-cols-2 md:gap-6">
-                <div class="w-full bg-transparent text-gray-600">
-                    <x-form-select class="text-gray-600"
+                <div class="w-full bg-transparent text-gray-300">
+                    <x-form-select class="color-logo"
                                    name="type">
 
-                        <x-slot name="label">Droit universitaire</x-slot>
+                        <x-slot name="label">Droits universitaire</x-slot>
 
                         @foreach($universityRights as $key => $universityRight)
                             <option class="p-2" value="{{ $key }}">
@@ -53,7 +53,6 @@
                 </div>
                 <x-form-input name="amount"
                               type="integer"
-                              disabled="disabled"
                               value="50000"
                               label="{{ __('Montant') }}"
                 />
