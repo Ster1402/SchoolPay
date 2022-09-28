@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\RequestException;
 
 
 class SmsController extends Controller
@@ -24,24 +26,37 @@ class SmsController extends Controller
     )
     {
 
-        $datetime = now()->toDateTimeString();
+        $datetime = Carbon::now()->toDateTimeString();
+        $username = 'makaebenezer@yahoo.fr';
+        $SendSms_url = 'https://smsvas.com/bulk/public/index.php/api/v1/sendsms';
+        $password = 'ecoleenspd2022';
+        $senderid = 'SchoolPay';
+        $mobiles = self::getPhoneNumbers($studentPhoneNumber, $payerPhoneNumber);
+        $sms = "Paiement des droits universitaires ({$universityRight}) de l'étudiant {$studentName} ({$registerNumber}) effectué par {$payerPhoneNumber} le {$datetime}.\nMontant: {$amount} , Frais: 100 FCFA.\n\nInstitut universitaire: {$schoolName}.";
 
-        $client = new Client();
+        $client = new Client([
+            "base_uri" => $SendSms_url
+        ]);
 
-        $sms = "Paiement des droits universitaires ($universityRight) de l'étudiant $studentName ($registerNumber) effectué par $payerPhoneNumber le $datetime.\nMontant: $amount , Frais: 100 FCFA.\n\nInstitut universitaire:$schoolName.";
+        $headers = [
+            'Accept' => 'application/json',
+            'Content-Type' => 'application/json',
+        ];
 
-        $response = $client->request('POST',
-            'https://smsvas.com/bulk/public/index.php/api/v1/sendsms',
-            [
-                'form_params' => [
-                    'username' => 'makaebenezer@yahoo.fr',
-                    'password' => 'ecoleenspd2022',
-                    'senderid' => 'SchoolPay',
+        try {
+            $response = $client->request('POST', $SendSms_url, [
+                'headers' => $headers,
+                'json' => [
+                    'username' => $username,
+                    'password' => $password,
+                    'senderid' => $senderid,
                     'sms' => $sms,
-                    'mobiles' => self::getPhoneNumbers($studentPhoneNumber, $payerPhoneNumber)
-                ]
-            ]
-        );
+                    'mobiles' => $mobiles,
+                ],
+            ]);
+
+        } catch (RequestException $ex) {
+        }
 
     }
 

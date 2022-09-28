@@ -44,17 +44,23 @@ class PaymentController extends Controller
      */
     public function store(Request $request)
     {
-
         $attributes = $request->validate([
             'student_id' => ['required', Rule::exists('students', 'id')],
             'registerNumber' => ['required', Rule::exists('students', 'registerNumber')],
             'academic_year_id' => ['required', Rule::exists('academic_years', 'id')],
             'payerName' => ['required', 'min:3', 'max:255'],
-            'payerIDCard' => ['required', 'integer'],
-            'payerPhoneNumber' => ['required', 'min:9', 'max:9'],
+            'payerIDCard' => ['required', 'integer', 'min:100'],
+            'payerPhoneNumber' => ['required', 'min:9', 'max:9', 'starts_with:6'],
             'type' => ['required'],
-            'amount' => ['required', 'integer']
+            'amount' => ['required', 'integer', 'min:5000']
         ]);
+
+        //On vérifie qu'il n'as pas déjà payé
+        $student = Student::find($attributes['student_id']);
+
+        if($student->hasPaid($attributes['type'])){
+            return redirect()->back()->with('success', 'Vous avez déjà payé ces droits!');
+        }
 
         /*TODO: Effectuer le paiement ici*/
 
@@ -63,8 +69,6 @@ class PaymentController extends Controller
         $attributes['payAt'] = $payAt;
 
         Payment::create($attributes);
-
-        $student = Student::find($attributes['student_id']);
 
         $studentPhoneNumber = $student->phoneNumber;
         $schoolName = $student->discipline->school->user->name;

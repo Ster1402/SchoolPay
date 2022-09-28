@@ -47,11 +47,28 @@ class Student extends Model
         }
 
         return $this->payments()
-            ->where('type', 'discharge-first-part')
+            ->where(static function($query){
+                $query->where('type', 'discharge-first-part')
+                    ->orwhere('type', 'discharge-all');
+            })
             ->whereHas('academicYear', function ($query) use ($academicYear_start) {
                 $query->where('period', 'like', $academicYear_start . "%-%");
             })->exists();
+    }
 
+    public function hasPaid ($type) {
+        switch ($type){
+            case 'discharge-first-part':
+                return $this->hasPaidDischargeFirstPart;
+            case 'discharge-second-part':
+                return $this->hasPaidDischargeSecondPart;
+            case 'discharge-all':
+                return $this->hasPaidDischargeSecondPart && $this->hasPaidDischargeFirstPart;
+            case 'medicalVisit':
+                return $this->hasPaidMedicalVisit;
+        }
+
+        return false;
     }
 
     public function getHasPaidDischargeSecondPartAttribute()
@@ -69,7 +86,10 @@ class Student extends Model
         }
 
         return $this->payments()
-            ->where('type', 'discharge-second-part')
+            ->where(static function($query){
+                $query->where('type', 'discharge-second-part')
+                    ->orwhere('type', 'discharge-all');
+            })
             ->whereHas('academicYear', function ($query) use ($academicYear_start) {
                 $query->where('period', 'like', $academicYear_start . "%-%");
             })->exists();
