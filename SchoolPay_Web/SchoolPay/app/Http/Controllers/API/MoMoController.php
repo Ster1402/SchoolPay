@@ -54,7 +54,7 @@ class MoMoController extends Controller
         //  $amt = $amount; TODO: Make the real payment + charge
         $amt = 1;
         $payment = $mtn_momo->requestPayment($token, $tel, $amt);
-        request('transactionID', $payment);
+        cache()->put('transactionID',$payment);
         //check if payment response is 200 first
         $payment_status_raw = $mtn_momo->getTransactionStatus($payment, $token);
         $payment_status = $payment_status_raw['status'];

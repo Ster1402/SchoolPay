@@ -11,6 +11,7 @@ use Carbon\Carbon;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Psr\SimpleCache\InvalidArgumentException;
 
 class PaymentController extends Controller
 {
@@ -77,7 +78,7 @@ class PaymentController extends Controller
         $payAt = Carbon::now()->toDateTimeString();
 
         $attributes['payAt'] = $payAt;
-        $attributes['transactionID'] = \request('transactionID') ?? "102039481931";
+        $attributes['transactionID'] = cache('transactionID') ?? "102039481931";
 
         Payment::create($attributes);
 
@@ -107,6 +108,9 @@ class PaymentController extends Controller
         }catch (GuzzleException $ex) {
             //Logs exception
         }
+        try {
+            cache()->delete('transactionID');
+        }catch(\Exception | InvalidArgumentException $e){}
 
         return redirect()->back()->with('success', 'Paiement effectué avec succès');
     }

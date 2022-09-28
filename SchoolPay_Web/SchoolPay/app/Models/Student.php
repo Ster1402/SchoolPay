@@ -47,7 +47,7 @@ class Student extends Model
         }
 
         return $this->payments()
-            ->where(static function($query){
+            ->where(static function ($query) {
                 $query->where('type', 'discharge-first-part')
                     ->orwhere('type', 'discharge-all');
             })
@@ -56,8 +56,9 @@ class Student extends Model
             })->exists();
     }
 
-    public function hasPaid ($type) {
-        switch ($type){
+    public function hasPaid($type)
+    {
+        switch ($type) {
             case 'discharge-first-part':
                 return $this->hasPaidDischargeFirstPart;
             case 'discharge-second-part':
@@ -86,7 +87,7 @@ class Student extends Model
         }
 
         return $this->payments()
-            ->where(static function($query){
+            ->where(static function ($query) {
                 $query->where('type', 'discharge-second-part')
                     ->orwhere('type', 'discharge-all');
             })
@@ -111,11 +112,12 @@ class Student extends Model
         }
 
         return $this->payments()
-            ->where('type', 'medicalVisit')
+            ->where(static function ($query) {
+                $query->where('type', 'medicalVisit');
+            })
             ->whereHas('academicYear', function ($query) use ($academicYear_start) {
                 $query->where('period', 'like', $academicYear_start . "%-%");
             })->exists();
-
     }
 
 
