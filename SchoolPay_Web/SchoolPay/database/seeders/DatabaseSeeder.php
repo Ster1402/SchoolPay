@@ -27,8 +27,12 @@ class DatabaseSeeder extends Seeder
         for($i=0; $i<10; $i++){
             $start = 2015 + $i;
             $end = $start + 1;
+
+            $status = $start===2022 ? 'on' : 'off';
+
             AcademicYear::factory()->create([
-                'period' => "$start - $end"
+                'period' => "$start - $end",
+                'status' => $status
             ]);
         }
 
@@ -70,6 +74,7 @@ class DatabaseSeeder extends Seeder
 
         Student::factory()->create([
             'registerNumber' => '21G00804',
+            'gender' => 'M',
             'phoneNumber' => '656656507',
             'user_id' => User::factory()->create([
                 'name' => 'NDE TSAPI STEVE-ROLAND',

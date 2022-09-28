@@ -12,7 +12,6 @@
 
             <div class="grid md:grid-cols-2 md:gap-6">
                 <input type="hidden" name="student_id" value="{{ $student->id }}"/>
-                <input type="hidden" name="academic_year_id" value="8"/>
                 <x-form-input name="registerNumber"
                               value="{{ $student->registerNumber }}"
                               label="{{ __('Matricule') }}"

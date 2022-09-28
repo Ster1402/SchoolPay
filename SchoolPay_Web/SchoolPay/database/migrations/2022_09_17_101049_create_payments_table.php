@@ -15,6 +15,7 @@ class CreatePaymentsTable extends Migration
     {
         Schema::create('payments', static function (Blueprint $table) {
             $table->id();
+            $table->string('transactionID');
             $table->foreignId('student_id')->constrained()->cascadeOnDelete();
             $table->foreignId('academic_year_id');
             $table->string('payerName');

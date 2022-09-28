@@ -21,6 +21,7 @@ class CreateStudentsTable extends Migration
             $table->string('registerNumber');
             $table->string('IDCardNumber')->nullable();
             $table->timestamp('birthday');
+            $table->enum('gender', ['M', 'F']);
             $table->timestamps();
         });
     }

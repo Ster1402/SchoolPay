@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\API\MoMoController;
 use App\Http\Controllers\API\SmsController;
+use App\Models\AcademicYear;
 use App\Models\Payment;
 use App\Models\Student;
 use Carbon\Carbon;
@@ -47,13 +49,16 @@ class PaymentController extends Controller
         $attributes = $request->validate([
             'student_id' => ['required', Rule::exists('students', 'id')],
             'registerNumber' => ['required', Rule::exists('students', 'registerNumber')],
-            'academic_year_id' => ['required', Rule::exists('academic_years', 'id')],
             'payerName' => ['required', 'min:3', 'max:255'],
             'payerIDCard' => ['required', 'integer', 'min:100'],
             'payerPhoneNumber' => ['required', 'min:9', 'max:9', 'starts_with:6'],
             'type' => ['required'],
-            'amount' => ['required', 'integer', 'min:5000']
+            'amount' => ['required', 'integer']
         ]);
+
+        //Academic Year
+        $academicYear = AcademicYear::firstWhere('status', 'on');
+        $attributes['academic_year_id'] = $academicYear->id;
 
         //On vérifie qu'il n'as pas déjà payé
         $student = Student::find($attributes['student_id']);
@@ -63,10 +68,16 @@ class PaymentController extends Controller
         }
 
         /*TODO: Effectuer le paiement ici*/
+        $result = MoMoController::makePayment($request);
+
+        if (!$result){
+            return redirect()->back()->with('warning', "Impossible d'effectuer le paiement. Veuillez vérifier votre solde.");
+        }
 
         $payAt = Carbon::now()->toDateTimeString();
 
         $attributes['payAt'] = $payAt;
+        $attributes['transactionID'] = request('transactionID');
 
         Payment::create($attributes);
 

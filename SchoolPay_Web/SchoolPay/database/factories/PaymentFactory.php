@@ -18,6 +18,7 @@ class PaymentFactory extends Factory
         return [
             'student_id' => Student::all()->random()->id,
             'academic_year_id' => AcademicYear::all()->random()->id,
+            'transactionID' => $this->faker->numerify('###########'),
             'payerName' => $this->faker->name,
             'payerIDCard' => $this->faker->numerify('###########'),
             'payerPhoneNumber' => $this->faker->regexify('67[0-9]{7,7}'),

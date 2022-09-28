@@ -17,6 +17,7 @@ class StudentFactory extends Factory
     {
         return [
             'user_id' => User::factory(),
+            'gender' => collect(['M', 'F'])->random(),
             'discipline_id' => Discipline::factory(),
             'phoneNumber' => $this->faker->phoneNumber,
             'registerNumber' => $this->faker->unique()->regexify('[1-2][1-8]G00([0-9]{3,3})'),

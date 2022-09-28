@@ -1,0 +1,60 @@
+{
+    "name": "bmatovu/oauth-negotiator",
+    "description": "OAuth2 client token manager.",
+    "homepage": "https://github.com/mtvbrianking/oauth-negotiator",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "package",
+        "oauth",
+        "oauth2",
+        "guzzle",
+        "middleware"
+    ],
+    "authors": [
+        {
+            "name": "Brian Matovu",
+            "email": "mtvbrianking@gmail.com",
+            "homepage": "http://bmatovu.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.2.5 || ^8.0",
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "^7.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.4",
+        "mockery/mockery": "^1.4",
+        "phpunit/phpunit": "^8.5.5"
+    },
+    "suggest": {
+        "monolog/monolog": "For comprehensive logging."
+    },
+    "autoload": {
+        "psr-4": {
+            "Bmatovu\\OAuthNegotiator\\": "src/"
+        },
+        "files": [
+            "src/Support/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Bmatovu\\OAuthNegotiator\\Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "cs-lint": "php-cs-fixer fix --dry-run --diff",
+        "cs-fix": "php-cs-fixer fix",
+        "doc": "phpdoc -c phpdoc.xml",
+        "test": "phpunit",
+        "test-coverage": "phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

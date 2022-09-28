@@ -17,7 +17,8 @@ class AcademicYearFactory extends Factory
         $end = $start + 1;
 
         return [
-            'period' => "$start - $end"
+            'period' => "$start - $end",
+            'status' => 'off'
         ];
     }
 }
