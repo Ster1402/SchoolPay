@@ -27,7 +27,7 @@ class SmsController extends Controller
     {
 
         $datetime = Carbon::now()->toDateTimeString();
-        $username = 'makaebenezer@yahoo.fr';
+        $user = 'makaebenezer@yahoo.fr';
         $SendSms_url = 'https://smsvas.com/bulk/public/index.php/api/v1/sendsms';
         $password = 'ecoleenspd2022';
         $senderid = 'SchoolPay';
@@ -35,7 +35,8 @@ class SmsController extends Controller
         $sms = "Paiement des droits universitaires ({$universityRight}) de l'étudiant {$studentName} ({$registerNumber}) effectué par {$payerPhoneNumber} le {$datetime}.\nMontant: {$amount} , Frais: 100 FCFA.\n\nInstitut universitaire: {$schoolName}.";
 
         $client = new Client([
-            "base_uri" => $SendSms_url
+            "base_uri" => $SendSms_url,
+            "timeout" => 5.0
         ]);
 
         $headers = [
@@ -47,7 +48,7 @@ class SmsController extends Controller
             $response = $client->request('POST', $SendSms_url, [
                 'headers' => $headers,
                 'json' => [
-                    'username' => $username,
+                    'user' => $user,
                     'password' => $password,
                     'senderid' => $senderid,
                     'sms' => $sms,

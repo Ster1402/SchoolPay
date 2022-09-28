@@ -77,7 +77,7 @@ class PaymentController extends Controller
         $payAt = Carbon::now()->toDateTimeString();
 
         $attributes['payAt'] = $payAt;
-        $attributes['transactionID'] = request('transactionID');
+        $attributes['transactionID'] = \request('transactionID') ?? "102039481931";
 
         Payment::create($attributes);
 
