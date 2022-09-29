@@ -75,7 +75,7 @@ class DatabaseSeeder extends Seeder
         Student::factory()->create([
             'registerNumber' => '21G00804',
             'gender' => 'M',
-            'phoneNumber' => '656656507',
+            'phoneNumber' => '693563166',
             'user_id' => User::factory()->create([
                 'name' => 'NDE TSAPI STEVE-ROLAND',
                 'email' => 'sterdevs@gmail.com',

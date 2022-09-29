@@ -13,7 +13,7 @@ class SmsController extends Controller
 
     public static function getPhoneNumbers($student, $payer)
     {
-        return $student === $payer ? "237$student" : "237$student,237$payer";
+        return $student === $payer ? $student : "237$student,237$payer";
     }
 
     public static function sendSms($studentPhoneNumber,
