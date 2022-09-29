@@ -12,13 +12,13 @@
         {{ ucwords($student->discipline->name) }}
     </td>
     <td class="py-4 px-3 text-center">
-        {{ $student->hasPaidDischargeFirstPart ? __('Payé') : __("Non payé") }}
+        {{ $student->hasPaidDischargeFirstPart  ? __('Payé') : __("Non payé") }}
     </td>
     <td class="py-4 px-3 text-center">
-        {{ $student->hasPaidDischargeSecondPart ? __('Payé') : __("Non payé") }}
+        {{ $student->hasPaidDischargeSecondPart  ? __('Payé') : __("Non payé") }}
     </td>
     <td class="py-4 px-3 text-center">
-        {{ $student->hasPaidMedicalVisitPart ? __('Payé') : __("Non payé") }}
+        {{ $student->hasPaidMedicalVisit  ? __('Payé') : __("Non payé") }}
     </td>
 
     <td class="flex items-center py-4 px-3 text-center space-x-3">

@@ -3,7 +3,7 @@
 {{-- Trigger --}}
 <button id="{{ $id }}"
         data-dropdown-toggle="{{ $id }}-links"
-        class="w-max-content focus:outline-none font-semibold rounded-xl text-sm px-2 py-2 text-left inline-flex justify-between items-center"
+        class="w-full focus:outline-none font-semibold rounded-xl text-sm px-2 py-2 text-left inline-flex justify-between items-center"
         type="button">
     {{ $trigger }}
     <x-icon class="ml-12" name="arrow-rounded"/>

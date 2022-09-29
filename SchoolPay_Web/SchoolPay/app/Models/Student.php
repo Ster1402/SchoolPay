@@ -130,9 +130,7 @@ class Student extends Model
             $query
                 ->where('registerNumber', 'like', '%' . $search . '%')
                 ->orWhereHas('user', function ($q) use ($search) {
-                    $q
-                        ->where('email', 'like', '%' . $search . '%')
-                        ->orwhere('name', 'like', '%' . $search . '%');
+                    $q->orwhere('name', 'like', '%' . $search . '%');
                 });
         });
 

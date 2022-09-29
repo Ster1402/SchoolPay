@@ -29,7 +29,7 @@ class StudentTable extends Component
         })->with('discipline')->filter(request(['discipline', 'status', 'academicYear', 'search']));
 
         return view('components.student-table', [
-            'students' => $students->paginate(5),
+            'students' => $students->paginate(5)->withQueryString(),
         ]);
     }
 }
